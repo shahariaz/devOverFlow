@@ -28,22 +28,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider
-      appearance={{
-        elements: {
-          typography: {
-            fontFamily: `${inter.variable}, ${SpaceGrotesk.variable}`,
-          },
-          formButtonPrimary: "primary-gradient",
-          footerActionLink: "primary-text-gradient hover:text-primary-500",
-        },
-      }}
-    >
-      <html lang='en'>
-        <body className={`${inter.variable} ${SpaceGrotesk.variable}`}>
+    <html lang='en'>
+      <body className={`${inter.variable} ${SpaceGrotesk.variable}`}>
+        <ClerkProvider
+          appearance={{
+            elements: {
+              typography: {
+                fontFamily: `${inter.variable}, ${SpaceGrotesk.variable}`,
+              },
+              formButtonPrimary: "primary-gradient",
+              footerActionLink: "primary-text-gradient hover:text-primary-500",
+            },
+          }}
+        >
           <ThemeProvider>{children}</ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
